@@ -1,0 +1,66 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&family=Pacifico&display=swap"); */
+
+body {
+  font-family: "Montserrat", sans-serif;
+  /* font-weight: 900; */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Pacifico", cursive;
+}
+
+h3 {
+  color: red;
+}
+
+/* principio del Cascade: https://2019.wattenberger.com/blog/css-cascade 
+fate sempre riferimento a questo grafico per comprendere il motivo per il quale la specificità e la posizione possono modificare la priorità 
+di assegnazione di una proprietà, qualora in conflitto con altre definizioni precedenti o successive.
+*/
+
+#color-violet {
+  color: palevioletred;
+}
+
+.color-blue {
+  color: paleturquoise !important;
+}
+
+.color-green {
+  color: palegreen;
+}
+
+h1 {
+  color: palegoldenrod !important;
+  text-align: center;
+}
+
+.font-big {
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+.pippo {
+  border: 6px solid coral;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 3px 6px 10px rgb(0 0 0 / 30%);
+}
+
+/* questo selettore è composto dall'elemento che vogliamo modificare (strong) e 
+una serie di genitori che concorrono a selezionare l'elemento in modo più preciso
+
+nel caso di p abbiamo applicato una pseudo classe che invaliderà il selettore nel caso in cui una particolare p abbia anche la classe .last applicata */
+.pippo div p:not(.last) strong {
+  color: orange;
+}
+
+/* altra possibilità di reset per un elemento specifico (legacy) */
+/* .pippo div p.last strong {
+  color: black;
+} */
